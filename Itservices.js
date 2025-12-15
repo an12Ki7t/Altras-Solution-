@@ -30,3 +30,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
   boxes.forEach(box => observer.observe(box));
 });
+document.addEventListener("DOMContentLoaded", () => {
+  const boxes = document.querySelectorAll(".why-box");
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = "1";
+        entry.target.style.transform = "translateY(0)";
+      }
+    });
+  }, { threshold: 0.2 });
+
+  boxes.forEach(box => {
+    box.style.opacity = "0";
+    box.style.transform = "translateY(30px)";
+    box.style.transition = "all 0.5s ease";
+    observer.observe(box);
+  });
+});

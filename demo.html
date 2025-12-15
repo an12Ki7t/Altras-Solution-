@@ -3,354 +3,431 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Our IT Services</title>
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+<title>Institute Contact</title>
+
 <style>
-* { box-sizing: border-box; margin: 0; padding: 0; }
-body { font-family: 'Poppins', sans-serif; background: #f4f4f4; color: #111; }
-
-/* Section */
-.services-section {
-    max-width: 1200px; /* Adjust container width */
-    margin: 0 auto;
-    padding: 50px 20px;
-    text-align: center;
-}
-.services-section h2 { font-size: 36px; margin-bottom: 10px; }
-.services-section p { font-size: 18px; color: #555; margin-bottom: 50px; }
-
-/* Grid */
-.services-grid {
-    display: flex;
-    flex-direction: column; /* Stack boxes in column */
-    gap: 30px;
+:root {
+  --primary: #f59e0b;
+  --dark: #111827;
+  --gray: #6b7280;
+  --light: #f9fafb;
+  --border: #e5e7eb;
 }
 
-/* Box */
-.service-box { 
-    background: #fff; 
-    padding: 30px; 
-    border-radius: 12px; 
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1); 
-    transition: all 0.4s ease; 
-    display: flex; 
-    flex-direction: column; 
-    justify-content: flex-start; 
-    opacity: 0; 
-    transform: translateY(30px); 
-}
-.service-box:hover { box-shadow: 0 0 20px #f59e0b; transform: translateY(-5px); }
-
-/* Title */
-.service-box h3 { font-size: 24px; margin-bottom: 15px; display: flex; align-items: center; gap: 12px; }
-.service-box h3 i { color: #f59e0b; font-size: 28px; }
-.service-box p.description { font-size: 16px; margin-bottom: 20px; color: #555; line-height: 1.5; }
-
-/* Section title */
-.section-title { font-weight: 600; margin-bottom: 10px; color: #333; font-size: 16px; text-align: left; }
-
-/* Features & Benefits Row - Full width items */
-.features-row {
-    display: flex;
-    flex-direction: column;  /* Stack items vertically */
-    gap: 10px;               /* Space between items */
-    margin-bottom: 15px;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Arial, sans-serif;
 }
 
-.features-row .feature-item {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    flex: 1 1 100%;          /* Full width */
-    font-size: 15px;
-    color: #555;
+body {
+  background: var(--light);
+  color: var(--dark);
 }
 
-.features-row .feature-item i {
-    color: #f59e0b;
+/* =========================
+   CONTACT SECTION
+========================= */
+.contact-section {
+  max-width: 1100px;
+  margin: auto;
+  padding: 60px 20px;
 }
 
-/* Technologies */
-.tech-tags { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 20px; }
-.tech { background: #111; color: #fff; padding: 6px 14px; border-radius: 6px; font-size: 14px; display: inline-block; }
-
-/* Button */
-.consult-btn { 
-    background: #f59e0b; 
-    color: #111; 
-    padding: 12px 28px; 
-    border: none; 
-    border-radius: 8px; 
-    font-weight: 600; 
-    cursor: pointer; 
-    margin-top: auto; 
-    transition: all 0.3s ease; 
-    width: fit-content;
+.contact-header {
+  text-align: center;
+  margin-bottom: 50px;
 }
-.consult-btn:hover { background: #d97706; color: #fff; }
 
-/* Scroll animation */
-.service-box.visible { opacity: 1; transform: translateY(0); }
-
-/* Responsive */
-@media(max-width:1024px) {
-    .services-section { padding: 50px 20px; }
-    .service-box h3 { font-size: 22px; }
+.contact-header h1 {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 12px;
 }
-@media(max-width:768px) {
-    .services-section h2 { font-size: 28px; }
-    .services-section p { font-size: 16px; }
-    .service-box h3 { font-size: 20px; }
-    .features-row .feature-item { flex: 1 1 100%; }
+
+.contact-header p {
+  font-size: 16px;
+  color: var(--gray);
+  max-width: 700px;
+  margin: auto;
+}
+
+/* =========================
+   FORM
+========================= */
+.contact-form {
+  background: #fff;
+  padding: 40px;
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group.full {
+  grid-column: span 2;
+}
+
+label {
+  font-size: 14px;
+  margin-bottom: 6px;
+  color: var(--dark);
+}
+
+input, select, textarea {
+  padding: 12px 14px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+textarea {
+  resize: none;
+  height: 110px;
+}
+
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+}
+
+/* =========================
+   BUTTON
+========================= */
+.submit-btn {
+  margin-top: 25px;
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  padding: 14px;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.submit-btn:hover {
+  background: #d97706;
+}
+
+/* =========================
+   POPUP
+========================= */
+.popup {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+
+.popup-box {
+  background: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  text-align: center;
+  max-width: 320px;
+}
+
+.popup-box h3 {
+  margin-bottom: 10px;
+}
+
+.popup-box button {
+  margin-top: 15px;
+  padding: 10px 20px;
+  border: none;
+  background: var(--primary);
+  color: #fff;
+  border-radius: 6px;
+  cursor: pointer;
+}
+/* ===== LOCATION FILTER ===== */
+.location-filter {
+  max-width: 300px;
+  margin: 0 auto 30px;
+}
+
+.location-filter select {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+}
+
+/* ===== LOCATION LAYOUT ===== */
+.location-wrapper {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 30px;
+}
+
+/* ===== LOCATION LIST ===== */
+.location-list {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.location-item {
+  background: #fff;
+  padding: 18px;
+  border-radius: 12px;
+  border-left: 5px solid transparent;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.location-item:hover,
+.location-item.active {
+  border-left-color: var(--primary);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+.location-item h3 {
+  margin-bottom: 6px;
+  font-size: 18px;
+}
+
+.location-item p {
+  font-size: 14px;
+  color: var(--gray);
+  margin-bottom: 6px;
+}
+
+.location-item a {
+  display: inline-block;
+  font-size: 14px;
+  color: var(--primary);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+/* ===== MAP ===== */
+.location-map iframe {
+  width: 100%;
+  height: 100%;
+  min-height: 420px;
+  border-radius: 14px;
+  border: 0;
+}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:900px){
+  .location-wrapper {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 900px) {
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .form-group.full {
+    grid-column: span 1;
+  }
+
+  .location-grid {
+    grid-template-columns: 1fr;
+  }
 }
 </style>
 </head>
+
 <body>
 
-<section class="services-section">
-    <h2>Our IT Services</h2>
-    <p>Comprehensive solutions designed to drive your business forward.</p>
+<section class="contact-section">
 
-    <div class="services-grid">
+  <!-- HEADER -->
+  <div class="contact-header">
+    <h1>Let's Talk Growth — For Your Career or Your Business</h1>
+    <p>
+      We are here to assist you move forward, whether you're searching for
+      professional IT services, training programs, or guidance.
+    </p>
+  </div>
 
-        <!-- Box 1 -->
-        <div class="service-box">
-            <h3><i class="fas fa-laptop-code"></i> Custom Software Development</h3>
-            <p class="description">Tailored software solutions built with cutting-edge technologies to meet your unique business requirements.</p>
-            <div class="section-title">Key Features:</div>
-            <div class="features-row">
-                <div class="feature-item"><i class="fas fa-check-circle"></i>Enterprise Application Development</div>
-                <div class="feature-item"><i class="fas fa-check-circle"></i>SaaS Product Development</div>
-                <div class="feature-item"><i class="fas fa-check-circle"></i>Legacy System Modernization</div>
-                <div class="feature-item"><i class="fas fa-check-circle"></i>API Development & Integration</div>
-            </div>
-            <div class="section-title">Benefits:</div>
-            <div class="features-row">
-                <div class="feature-item"><i class="fas fa-check-circle"></i>Scalable & Secure Architecture</div>
-                <div class="feature-item"><i class="fas fa-check-circle"></i>Agile Development Process</div>
-                <div class="feature-item"><i class="fas fa-check-circle"></i>Post-Launch Support</div>
-                <div class="feature-item"><i class="fas fa-check-circle"></i>1 Year Free Maintenance</div>
-            </div>
-            <div class="section-title">Technologies We Use:</div>
-            <div class="tech-tags">
-                <div class="tech">React</div>
-                <div class="tech">Node.js</div>
-                <div class="tech">Python</div>
-                <div class="tech">Java</div>
-                <div class="tech">.NET</div>
-            </div>
-            <button class="consult-btn">Get a Free Consultation</button>
-        </div>
+  <!-- FORM -->
+  <form class="contact-form" id="contactForm">
+    <div class="form-grid">
 
-        <!-- Box 2 -->
-        <div class="service-box">
-            <h3><i class="fas fa-globe"></i> Website Development Services</h3>
-            <p class="description">Professional, responsive websites that drive engagement and deliver exceptional user experiences.</p>
-            <div class="section-title">Key Features:</div>
-            <div class="features-row">
-                <div class="feature-item"><i class="fas fa-check-circle"></i>Corporate Website Development</div>
-                <div class="feature-item"><i class="fas fa-check-circle"></i>E-commerce Platforms</div>
-                <div class="feature-item"><i class="fas fa-check-circle"></i>CMS-based Websites</div>
-                <div class="feature-item"><i class="fas fa-check-circle"></i>Progressive Web Apps (PWA)</div>
-            </div>
-            <div class="section-title">Benefits:</div>
-            <div class="features-row">
-                <div class="feature-item"><i class="fas fa-check-circle"></i>Mobile-First Design</div>
-                <div class="feature-item"><i class="fas fa-check-circle"></i>SEO Optimized</div>
-                <div class="feature-item"><i class="fas fa-check-circle"></i>Fast Loading Speed</div>
-                <div class="feature-item"><i class="fas fa-check-circle"></i>Conversion Focused</div>
-            </div>
-            <div class="section-title">Technologies We Use:</div>
-            <div class="tech-tags">
-                <div class="tech">Next.js</div>
-                <div class="tech">WordPress</div>
-                <div class="tech">Shopify</div>
-                <div class="tech">React</div>
-                <div class="tech">Vue.js</div>
-            </div>
-            <button class="consult-btn">Get a Free Consultation</button>
-        </div>
+      <div class="form-group">
+        <label>Full Name</label>
+        <input type="text" required>
+      </div>
 
-        <!-- Box 3 -->
-        <div class="service-box">
-            <h3><i class="fas fa-cloud"></i> Cloud & DevOps Services</h3>
-            <p class="description">Scalable cloud infrastructure and DevOps automation for seamless deployment and operations.</p>
-            <div class="section-title">Key Features:</div>
-            <div class="features-row">
-                <div class="feature-item"><i class="fas fa-check-circle"></i>Cloud Migration & Setup</div>
-                <div class="feature-item"><i class="fas fa-check-circle"></i>Infrastructure as Code</div>
-                <div class="feature-item"><i class="fas fa-check-circle"></i>CI/CD Pipeline Implementation</div>
-                <div class="feature-item"><i class="fas fa-check-circle"></i>Container Orchestration</div>
-            </div>
-            <div class="section-title">Benefits:</div>
-            <div class="features-row">
-                <div class="feature-item"><i class="fas fa-check-circle"></i>Reduced Operational Costs</div>
-                <div class="feature-item"><i class="fas fa-check-circle"></i>Improved Scalability</div>
-                <div class="feature-item"><i class="fas fa-check-circle"></i>Faster Deployment</div>
-                <div class="feature-item"><i class="fas fa-check-circle"></i>99.9% Uptime SLA</div>
-            </div>
-            <div class="section-title">Technologies We Use:</div>
-            <div class="tech-tags">
-                <div class="tech">AWS</div>
-                <div class="tech">Azure</div>
-                <div class="tech">Docker</div>
-                <div class="tech">Kubernetes</div>
-                <div class="tech">Jenkins</div>
-            </div>
-            <button class="consult-btn">Get a Free Consultation</button>
-        </div>
+      <div class="form-group">
+        <label>Email</label>
+        <input type="email" required>
+      </div>
 
-        <!-- Box 4 -->
-        <div class="service-box">
-            <h3><i class="fas fa-headset"></i> IT Consulting & Support</h3>
-            <p class="description">Expert guidance and 24/7 support to optimize your IT infrastructure and business processes.</p>
-            <div class="section-title">Key Features:</div>
-            <div class="features-row">
-                <div class="feature-item"><i class="fas fa-check-circle"></i>IT Strategy & Planning</div>
-                <div class="feature-item"><i class="fas fa-check-circle"></i>Technology Assessment</div>
-                <div class="feature-item"><i class="fas fa-check-circle"></i>System Integration</div>
-                <div class="feature-item"><i class="fas fa-check-circle"></i>24/7 Technical Support</div>
-            </div>
-            <div class="section-title">Benefits:</div>
-            <div class="features-row">
-                <div class="feature-item"><i class="fas fa-check-circle"></i>Expert Guidance</div>
-                <div class="feature-item"><i class="fas fa-check-circle"></i>Cost Optimization</div>
-                <div class="feature-item"><i class="fas fa-check-circle"></i>Risk Mitigation</div>
-                <div class="feature-item"><i class="fas fa-check-circle"></i>Continuous Improvement</div>
-            </div>
-            <div class="section-title">Technologies We Use:</div>
-            <div class="tech-tags">
-                <div class="tech">Multi-Platform</div>
-                <div class="tech">Cross-Technology</div>
-                <div class="tech">Vendor Agnostic</div>
-            </div>
-            <button class="consult-btn">Get a Free Consultation</button>
-        </div>
+      <div class="form-group">
+        <label>Phone Number</label>
+        <input type="tel" required>
+      </div>
 
-        <!-- Box 5 -->
-        <div class="service-box">
-            <h3><i class="fas fa-bullhorn"></i> Digital Marketing Services</h3>
-            <p class="description">Data-driven marketing strategies to boost your online presence and drive business growth.</p>
-            <div class="section-title">Key Features:</div>
-            <div class="features-row">
-                <div class="feature-item"><i class="fas fa-check-circle"></i>Search Engine Optimization (SEO)</div>
-                <div class="feature-item"><i class="fas fa-check-circle"></i>Pay-Per-Click Advertising (PPC)</div>
-                <div class="feature-item"><i class="fas fa-check-circle"></i>Social Media Marketing</div>
-                <div class="feature-item"><i class="fas fa-check-circle"></i>Content Marketing & Strategy</div>
-            </div>
-            <div class="section-title">Benefits:</div>
-            <div class="features-row">
-                <div class="feature-item"><i class="fas fa-check-circle"></i>Increased Online Visibility</div>
-                <div class="feature-item"><i class="fas fa-check-circle"></i>Higher Conversion Rates</div>
-                <div class="feature-item"><i class="fas fa-check-circle"></i>Measurable ROI</div>
-                <div class="feature-item"><i class="fas fa-check-circle"></i>Brand Building</div>
-            </div>
-            <div class="section-title">Technologies We Use:</div>
-            <div class="tech-tags">
-                <div class="tech">Google Ads</div>
-                <div class="tech">Facebook Ads</div>
-                <div class="tech">Analytics</div>
-                <div class="tech">SEO Tools</div>
-            </div>
-            <button class="consult-btn">Get a Free Consultation</button>
-        </div>
+      <div class="form-group">
+        <label>City</label>
+        <input type="text">
+      </div>
 
-        <!-- Box 6 -->
-        <div class="service-box">
-            <h3><i class="fas fa-robot"></i> Automation & Integration Solutions</h3>
-            <p class="description">Streamline operations with intelligent automation and seamless system integrations.</p>
-            <div class="section-title">Key Features:</div>
-            <div class="features-row">
-                <div class="feature-item"><i class="fas fa-check-circle"></i>Business Process Automation</div>
-                <div class="feature-item"><i class="fas fa-check-circle"></i>Third-Party API Integration</div>
-                <div class="feature-item"><i class="fas fa-check-circle"></i>Workflow Automation</div>
-                <div class="feature-item"><i class="fas fa-check-circle"></i>Data Synchronization</div>
-            </div>
-            <div class="section-title">Benefits:</div>
-            <div class="features-row">
-                <div class="feature-item"><i class="fas fa-check-circle"></i>Increased Efficiency</div>
-                <div class="feature-item"><i class="fas fa-check-circle"></i>Reduced Manual Errors</div>
-                <div class="feature-item"><i class="fas fa-check-circle"></i>Time Savings</div>
-                <div class="feature-item"><i class="fas fa-check-circle"></i>Better Data Flow</div>
-            </div>
-            <div class="section-title">Technologies We Use:</div>
-            <div class="tech-tags">
-                <div class="tech">Zapier</div>
-                <div class="tech">Make</div>
-                <div class="tech">Custom APIs</div>
-                <div class="tech">Webhooks</div>
-            </div>
-            <button class="consult-btn">Get a Free Consultation</button>
-        </div>
+      <div class="form-group">
+        <label>I'm Interested In</label>
+        <select>
+          <option>Training Program</option>
+          <option>IT Services</option>
+          <option>Corporate Training</option>
+          <option>Career Guidance</option>
+        </select>
+      </div>
 
-        <!-- Box 7 -->
-        <div class="service-box">
-            <h3><i class="fas fa-mobile-alt"></i> Application Development Services</h3>
-            <p class="description">Native and cross-platform mobile applications that deliver seamless user experiences.</p>
-            <div class="section-title">Key Features:</div>
-            <div class="features-row">
-                <div class="feature-item"><i class="fas fa-check-circle"></i>iOS & Android Development</div>
-                <div class="feature-item"><i class="fas fa-check-circle"></i>Cross-Platform Apps</div>
-                <div class="feature-item"><i class="fas fa-check-circle"></i>App Maintenance & Updates</div>
-                <div class="feature-item"><i class="fas fa-check-circle"></i>App Store Optimization</div>
-            </div>
-            <div class="section-title">Benefits:</div>
-            <div class="features-row">
-                <div class="feature-item"><i class="fas fa-check-circle"></i>Native Performance</div>
-                <div class="feature-item"><i class="fas fa-check-circle"></i>Intuitive UI/UX</div>
-                <div class="feature-item"><i class="fas fa-check-circle"></i>Offline Functionality</div>
-                <div class="feature-item"><i class="fas fa-check-circle"></i>Push Notifications</div>
-            </div>
-            <div class="section-title">Technologies We Use:</div>
-            <div class="tech-tags">
-                <div class="tech">React Native</div>
-                <div class="tech">Flutter</div>
-                <div class="tech">Swift</div>
-                <div class="tech">Kotlin</div>
-            </div>
-            <button class="consult-btn">Get a Free Consultation</button>
-        </div>
+      <div class="form-group">
+        <label>Course Name</label>
+        <select>
+          <option>Full Stack Development</option>
+          <option>React JS</option>
+          <option>UI/UX Design</option>
+          <option>Python</option>
+        </select>
+      </div>
 
-        <!-- Box 8 -->
-        <div class="service-box">
-            <h3><i class="fas fa-database"></i> Custom CRM & ERP Systems</h3>
-            <p class="description">Tailored business management systems to streamline your operations and improve efficiency.</p>
-            <div class="section-title">Key Features:</div>
-            <div class="features-row">
-                <div class="feature-item"><i class="fas fa-check-circle"></i>Customer Relationship Management</div>
-                <div class="feature-item"><i class="fas fa-check-circle"></i>Enterprise Resource Planning</div>
-                <div class="feature-item"><i class="fas fa-check-circle"></i>Inventory Management</div>
-                <div class="feature-item"><i class="fas fa-check-circle"></i>Sales & Analytics Dashboard</div>
-            </div>
-            <div class="section-title">Benefits:</div>
-            <div class="features-row">
-                <div class="feature-item"><i class="fas fa-check-circle"></i>Centralized Data</div>
-                <div class="feature-item"><i class="fas fa-check-circle"></i>Process Automation</div>
-                <div class="feature-item"><i class="fas fa-check-circle"></i>Better Decision Making</div>
-                <div class="feature-item"><i class="fas fa-check-circle"></i>Improved Productivity</div>
-            </div>
-            <div class="section-title">Technologies We Use:</div>
-            <div class="tech-tags">
-                <div class="tech">Custom Built</div>
-                <div class="tech">Salesforce</div>
-                <div class="tech">Odoo</div>
-                <div class="tech">SAP</div>
-            </div>
-            <button class="consult-btn">Get a Free Consultation</button>
-        </div>
+      <div class="form-group">
+        <label>Branch</label>
+        <select>
+          <option>Pune</option>
+          <option>Mumbai</option>
+          <option>Bangalore</option>
+        </select>
+      </div>
+
+      <div class="form-group full">
+        <label>Enter Your Query</label>
+        <textarea></textarea>
+      </div>
 
     </div>
-</section>
+
+    <button class="submit-btn" type="submit">Submit Inquiry</button>
+  </form>
+<div class="locations">
+  <h2>Our Locations</h2>
+
+  <!-- Filter -->
+  <div class="location-filter">
+    <select id="cityFilter">
+      <option value="pune">Pune</option>
+      <option value="mumbai">Mumbai</option>
+      <option value="bangalore">Bangalore</option>
+      <option value="hyderabad">Hyderabad</option>
+    </select>
+  </div>
+
+  <div class="location-wrapper">
+
+    <!-- MAP -->
+    <div class="location-map">
+      <iframe id="mainMap"
+        src="https://maps.google.com/maps?q=Pune&t=&z=13&output=embed">
+      </iframe>
+    </div>
+
+    <!-- LIST -->
+    <div class="location-list" id="locationList">
+
+      <div class="location-item active" data-city="pune" data-map="Pune">
+        <h3>Pune Campus</h3>
+        <p>Office No. 402, IT Park, Hinjewadi, Pune</p>
+        <a href="tel:+919876543210">📞 +91 98765 43210</a>
+      </div>
+
+      <div class="location-item" data-city="mumbai" data-map="Mumbai">
+        <h3>Mumbai Campus</h3>
+        <p>Andheri East, Near Metro Station, Mumbai</p>
+        <a href="tel:+919876543211">📞 +91 98765 43211</a>
+      </div>
+
+      <div class="location-item" data-city="bangalore" data-map="Bangalore">
+        <h3>Bangalore Campus</h3>
+        <p>BTM Layout, Tech Corridor, Bangalore</p>
+        <a href="tel:+919876543212">📞 +91 98765 43212</a>
+      </div>
+
+      <div class="location-item" data-city="hyderabad" data-map="Hyderabad">
+        <h3>Hyderabad Campus</h3>
+        <p>Hitech City, Madhapur, Hyderabad</p>
+        <a href="tel:+919876543213">📞 +91 98765 43213</a>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+  
+
+<!-- POPUP -->
+<div class="popup" id="popup">
+  <div class="popup-box">
+    <h3>Thank You!</h3>
+    <p>Your inquiry has been submitted successfully.</p>
+    <button onclick="closePopup()">OK</button>
+  </div>
+</div>
 
 <script>
-// Scroll-in animation
-const boxes = document.querySelectorAll('.service-box');
-const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-        if(entry.isIntersecting) entry.target.classList.add('visible');
-    });
-}, { threshold: 0.2 });
-boxes.forEach(box => observer.observe(box));
+const form = document.getElementById("contactForm");
+const popup = document.getElementById("popup");
+
+form.addEventListener("submit", function(e) {
+  e.preventDefault();
+  popup.style.display = "flex";
+  form.reset();
+});
+
+function closePopup() {
+  popup.style.display = "none";
+}
+const mapFrame = document.getElementById("mainMap");
+const items = document.querySelectorAll(".location-item");
+const filter = document.getElementById("cityFilter");
+
+function activateLocation(city) {
+  items.forEach(item => {
+    item.classList.toggle("active", item.dataset.city === city);
+    if(item.dataset.city === city){
+      mapFrame.src =
+        `https://maps.google.com/maps?q=${item.dataset.map}&t=&z=13&output=embed`;
+    }
+  });
+}
+
+items.forEach(item => {
+  item.addEventListener("click", () => {
+    filter.value = item.dataset.city;
+    activateLocation(item.dataset.city);
+  });
+});
+
+filter.addEventListener("change", e => {
+  activateLocation(e.target.value);
+});
 </script>
 
 </body>

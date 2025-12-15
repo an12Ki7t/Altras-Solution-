@@ -57,6 +57,7 @@ body {
   display: flex;
   gap: 22px;
   list-style: none;
+  align-items: center;
 }
 
 .nav-links a {
