@@ -36,20 +36,12 @@ body {
 }
 
 /* ---------------- LOGO LEFT ---------------- */
-.logo .word1 {
-  font-size: 26px;
-  font-weight: 700;
-  color: #f59e0b;
-}
-
-.logo .word2 {
-  font-size: 26px;
-  font-weight: 700;
-  color: #ffffff;
-}
-
-.navbar.scrolled .logo .word2 {
-  color: #111827;
+.logo a {
+  display: block;
+  width: 200px;       /* adjust logo width */
+  height: 75px;       /* adjust logo height */
+  background: url('./altras.png') no-repeat center/contain;
+  text-indent: -9999px; /* hide text if any */
 }
 
 /* ---------------- CENTER MENU ---------------- */
@@ -293,64 +285,68 @@ body {
 }
 /* COUNTER SECTION */
 .counter-section {
-  width: 100%;
-  padding: 80px 0;
-  background: #fbbf24;
-  text-align: center;
+  padding: 80px 20px;
+  background: #f9fafb;
 }
 
-/* CONTAINER */
+.counter-header {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 50px;
+}
+
+.counter-header h2 {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: #111827;
+}
+
+.counter-header h2 span {
+  color: #f59e0b;
+}
+
+.counter-header p {
+  font-size: 16px;
+  color: #6b7280;
+  line-height: 1.6;
+}
+
 .counter-container {
-  width: 85%;
+  max-width: 1100px;
   margin: auto;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 35px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
 }
 
-/* COUNTER BOX */
 .counter-box {
-  
-  padding: 30px 20px;
-  border-radius: 16px;
-  box-shadow: 0 4px 18px rgba(0,0,0,0.12);
-  transition: 0.3s ease;
-  border: 1px solid #fcd34d;
+  background: #ffffff;
+  padding: 35px 20px;
+  border-radius: 14px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .counter-box:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 12px 35px rgba(0,0,0,0.18);
+  transform: translateY(-6px);
+  box-shadow: 0 16px 40px rgba(245,158,11,0.25);
 }
 
-/* NUMBER */
-.count-num {
-  font-size: 46px;
+.counter-box h2 {
+  font-size: 40px;
   font-weight: 800;
-  color: #111827;
-  margin-bottom: 10px;
-  transition: 0.3s ease-in-out;
+  color: #f59e0b;
+  margin-bottom: 8px;
 }
 
-/* LABEL */
 .counter-box p {
-  font-size: 18px;
-  font-weight: 600;
-  color: #333;
+  font-size: 15px;
+  font-weight: 500;
+  color: #374151;
 }
 
-/* RESPONSIVE */
-@media(max-width: 900px){
-  .counter-container {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media(max-width: 550px){
-  .counter-container {
-    grid-template-columns: 1fr;
-  }
-}
 
 /* ABOUT SECTION */
 .about-section {
@@ -551,157 +547,176 @@ body {
         grid-template-columns: repeat(1, 1fr);
     }
 }
-/* TRAINING SECTION */
+/* TRAINING SECTION – MATCH COUNTER SPACING & EQUAL HEIGHT */
 .training-section {
-    width: 100%;
-    padding: 80px 10%;
-    background: #ffffff;
-    
+  padding: 80px 20px;  /* same as counter section */
+  background: #f9fafb;
+}
+
+.training-heading {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 50px;  /* same spacing as counter section heading */
 }
 
 .training-heading h2 {
-    text-align: center;
-    font-size: 36px;
-    color: #111827;
-    margin-bottom: 10px;
-    font-weight: 700;
+  font-size: 36px;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 12px;
+}
+
+.training-heading h2 span {
+  color: #f59e0b;
 }
 
 .training-heading p {
-    text-align: center;
-    font-size: 16px;
-    color: #4b5563;
-    margin-bottom: 50px;
+  font-size: 16px;
+  color: #6b7280;
+  line-height: 1.6;
 }
 
+/* Container – equal height using flex */
 .training-container {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 50px;
-    margin-right: 100px;
-    
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  gap: 30px;            /* space between boxes */
+  justify-content: space-between; /* spread evenly */
+  flex-wrap: wrap;       /* wrap on smaller screens */
 }
 
-/* TRAINING BOX */
+
+/* Card – flex column & grow to same height */
 .training-box {
-    background: #ffffff;
-    padding: 20px;
-    border-radius: 14px;
-    text-align: center;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-    transition: all 0.3s ease;
-    border: 1px solid #e5e7eb;
-    
+  flex: 1 1 calc(25% - 22.5px); /* 4 boxes in one row, adjusts for gap */
+  min-width: 260px;               /* prevent boxes from being too narrow */
+  background: #ffffff;
+  border-radius: 14px;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 20px;
+  box-shadow: 0 8px 28px rgba(0,0,0,0.06);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
 }
-
 .training-box:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 12px 35px rgba(251,191,36,0.25);
-    border-color: #fbbf24;
+  transform: translateY(-6px);
+  box-shadow: 0 16px 40px rgba(245,158,11,0.18);
 }
-
-/* IMAGE */
+/* Image */
 .training-img {
-    width: 100%;
-    height: 160px;
-    object-fit: cover;
-    border-radius: 12px;
-    margin-bottom: 15px;
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  filter: saturate(0.95);
 }
 
-/* ICON */
-.training-icon {
-    font-size: 40px;
-    color: #fbbf24;
-    margin-bottom: 10px;
-}
-
-/* HEADING */
+/* Title */
 .training-box h3 {
-    font-size: 20px;
-    font-weight: 600;
-    color: #111827;
-    margin-bottom: 10px;
+  font-size: 20px;
+  font-weight: 700;
+  color: #111827;
+  margin: 18px 20px 10px;
 }
 
-/* PARAGRAPH */
+/* Description */
 .training-box p {
-    font-size: 15px;
-    color: #4b5563;
-    margin-bottom: 10px;
+  font-size: 15px;
+  color: #6b7280;
+  line-height: 1.6;
+  margin: 0 20px 12px;
 }
-/* KEY FEATURES LIST */
+
+/* Features */
 .key-features {
-    text-align: left;
-    margin: 15px 0 10px;
-    padding-left: 20px;
+  list-style: none;
+  margin: 0 20px 12px;
+  padding: 0;
+  flex-grow: 1; /* make list grow to push duration to bottom */
 }
 
 .key-features li {
-    font-size: 14px;
-    margin-bottom: 6px;
-    position: relative;
-    color: #333;
-    font-weight: 500;
+  font-size: 14px;
+  color: #374151;
+  margin-bottom: 6px;
+  padding-left: 18px;
+  position: relative;
 }
 
-/* Bullet Icon (yellow dot) */
 .key-features li::before {
-    content: "✔";
-    position: absolute;
-    left: -18px;
-    top: 1px;
-    color: #f59e0b; /* Matches your site theme */
-    font-weight: bold;
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #f59e0b;
+  font-weight: bold;
 }
 
-
-/* DURATION */
-.training-box .duration {
-  display: inline-block;
-    font-size: 14px;
-    font-weight: 600;
-    color: #ffffff;            /* White text */
-    background-color: #111827; /* Black/dark background */
-    padding: 4px 10px;
-    border-radius: 6px;
-    margin-top: 10px; 
+/* Duration badge at bottom */
+.duration {
+  font-size: 13px;
+  font-weight: 600;
+  color: #f59e0b;
+  background: rgba(245,158,11,0.12);
+  padding: 6px 14px;
+  border-radius: 20px;
+  margin: 0 20px 14px;
+  width: fit-content;
 }
 
-/* EXPLORE BUTTON */
+/* Explore Button */
 .explore-container {
-    text-align: center;
-    margin-top: 40px;
+  text-align: center;
+  margin-top: 50px; /* match counter section spacing */
 }
 
-#exploreCoursesBtn {
-    padding: 12px 35px;
-    font-size: 16px;
-    background: #fbbf24;
-    border: none;
-    color: #111827;
-    font-weight: 600;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: 0.3s;
+.explore-container button {
+  background: #f59e0b;
+  color: #fff;
+  border: none;
+  padding: 14px 34px;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
 }
 
-#exploreCoursesBtn:hover {
-    background: #f59e0b;
+.explore-container button:hover {
+  background: #d97706;
+  transform: translateY(-2px);
 }
 
-/* RESPONSIVE */
-@media (max-width: 1200px) {
-    .training-container {
-        grid-template-columns: repeat(2, 1fr);
-    }
+/* Mobile */
+@media (max-width: 1024px) {
+  .training-box {
+    flex: 1 1 calc(50% - 15px); /* 2 per row */
+  }
 }
 
-@media (max-width: 676px) {
-    .training-container {
-        grid-template-columns: 1fr;
-    }
+@media (max-width: 768px) {
+  .training-section {
+    padding: 60px 16px;
+  }
+
+  .training-heading h2 {
+    font-size: 30px;
+  }
+
+  .training-box {
+    flex: 1 1 100%;
+  }
+
+  .training-img {
+    height: 160px;
+  }
 }
+@media (min-width: 1400px) {
+  .training-container {
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* slightly wider on very large screens */
+  }
+}
+
+
 /* SUCCESS SECTION */
 .success-section {
     width: 100%;
@@ -920,6 +935,79 @@ body {
         font-size: 16px;
     }
 }
+/* CTA SECTION */
+.learning-cta {
+    width: 100%;
+    background: #f59e0b;
+    padding: 80px 20px;
+    text-align: center;
+    color: #111827;
+}
+
+.learning-cta h2 {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.learning-cta p {
+    font-size: 18px;
+    max-width: 700px;
+    margin: 0 auto 35px;
+    line-height: 1.6;
+}
+
+/* BUTTON WRAPPER */
+.cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+/* BASE BUTTON STYLE */
+.cta-btn {
+    padding: 14px 28px;
+    border-radius: 50px;
+    font-size: 17px;
+    font-weight: 600;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+/* FIRST BUTTON - CALL NOW */
+.call-btn {
+    background: #111827;
+    color: #ffffff;
+    border: 2px solid #111827;
+}
+
+.call-btn:hover {
+    background: transparent;
+    color: #111827;
+}
+
+/* SECOND BUTTON - REQUEST CALLBACK */
+.callback-btn {
+    background: #ffffff;
+    color: #111827;
+    border: 2px solid #ffffff;
+}
+
+/* HOVER → BLACK */
+.callback-btn:hover {
+    background: #111827;
+    border-color: #111827;
+    color: #ffffff;
+}
+
+/* MOBILE RESPONSIVE */
+@media(max-width:768px){
+    .learning-cta h2 { font-size: 28px; }
+    .cta-btn { width: 90%; }
+}
 /* FOOTER BASE */
 .footer {
     background: #f3f4f6;
@@ -944,11 +1032,14 @@ body {
 }
 
 /* LOGO TEXT STYLE */
-.footer-logo-text {
-    font-size: 32px;
-    font-weight: 700;
-    margin-bottom: 15px;
+.footer-logo a {
+  display: block;
+  width: 200px;       /* adjust logo width */
+  height: 75px;       /* adjust logo height */
+  background: url('./altras.png') no-repeat center/contain;
+  text-indent: -9999px; /* hide text if any */
 }
+
 
 .footer-logo-text .word1 { color: #111827; }
 .footer-logo-text .word2 { color: #f59e0b; }

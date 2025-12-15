@@ -27,8 +27,14 @@ body {
   justify-content: space-between;
 }
 
-.logo .word1 { color: #f59e0b; font-size: 28px; font-weight: 700; }
-.logo .word2 { color: black; font-size: 28px; font-weight: 700; }
+.logo a {
+  display: block;
+  width: 200px;       /* adjust logo width */
+  height: 75px;       /* adjust logo height */
+  background: url('./altras.png') no-repeat center/contain;
+  text-indent: -9999px; /* hide text if any */
+}
+
 
 .nav-links { display: flex; gap: 20px; list-style: none; }
 
@@ -214,9 +220,9 @@ body {
 
 /* Grid */
 .services-grid {
-    display: flex;
-    flex-direction: column; /* Stack boxes in column */
-    gap: 30px;
+     display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 boxes per row */
+    gap: 100px; /* space between boxes */
 }
 
 /* Box */
@@ -292,6 +298,9 @@ body {
 }
 @media(max-width:768px) {
     .services-section h2 { font-size: 28px; }
+    .services-grid {
+        grid-template-columns: 1fr; /* 1 box per row on small screens */
+    }
     .services-section p { font-size: 16px; }
     .service-box h3 { font-size: 20px; }
     .features-row .feature-item { flex: 1 1 100%; }
@@ -476,13 +485,14 @@ body {
 }
 
 /* LOGO TEXT STYLE */
-.footer-logo-text {
-    font-size: 32px;
-    font-weight: 700;
-    margin-bottom: 15px;
+.footer-logo a {
+  display: block;
+  width: 200px;       /* adjust logo width */
+  height: 75px;       /* adjust logo height */
+  background: url('./altras.png') no-repeat center/contain;
+  text-indent: -9999px; /* hide text if any */
 }
 
-.footer-logo-text .word1 { color: #111827; }
 .footer-logo-text .word2 { color: #f59e0b; }
 
 /* ABOUT */

@@ -27,9 +27,13 @@ body {
   justify-content: space-between;
 }
 
-.logo .word1 { color: #f59e0b; font-size: 28px; font-weight: 700; }
-.logo .word2 { color: black; font-size: 28px; font-weight: 700; }
-
+.logo a {
+  display: block;
+  width: 200px;       /* adjust logo width */
+  height: 75px;       /* adjust logo height */
+  background: url('./altras.png') no-repeat center/contain;
+  text-indent: -9999px; /* hide text if any */
+}
 .nav-links { display: flex; gap: 20px; list-style: none; }
 
 .nav-links a {
@@ -555,15 +559,14 @@ body {
 }
 
 /* LOGO TEXT STYLE */
-.footer-logo-text {
-    font-size: 32px;
-    font-weight: 700;
-    margin-bottom: 15px;
+/* LOGO TEXT STYLE */
+.footer-logo a {
+  display: block;
+  width: 200px;       /* adjust logo width */
+  height: 75px;       /* adjust logo height */
+  background: url('./altras.png') no-repeat center/contain;
+  text-indent: -9999px; /* hide text if any */
 }
-
-.footer-logo-text .word1 { color: #111827; }
-.footer-logo-text .word2 { color: #f59e0b; }
-
 /* ABOUT */
 .footer-about {
     margin: 15px 0 25px;

@@ -102,6 +102,7 @@ document.getElementById("exploreCoursesBtn").addEventListener("click", function(
     window.location.href = "training.html"; // Replace with your training page URL
 });
 
+
 // SUCCESS BOX ANIMATION
 const boxes = document.querySelectorAll(".success-box");
 

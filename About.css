@@ -30,8 +30,13 @@ body {
   justify-content: space-between;
 }
 
-.logo .word1 { color: #f59e0b; font-size: 28px; font-weight: 700; }
-.logo .word2 { color: black; font-size: 28px; font-weight: 700; }
+.logo a {
+  display: block;
+  width: 200px;       /* adjust logo width */
+  height: 75px;       /* adjust logo height */
+  background: url('./altras.png') no-repeat center/contain;
+  text-indent: -9999px; /* hide text if any */
+}
 
 .nav-links { display: flex; gap: 20px; list-style: none; }
 
@@ -147,42 +152,103 @@ body {
   }
 }
 
-/* ---------------- ABOUT HEADER ---------------- */
-.about-header {
-    width: 100%;
-    text-align: center;
-    padding: 60px 0;
-    background: transparent; /* Remove full width black */
+/* ABOUT BANNER WITH BACKGROUND IMAGE */
+.about-banner {
+  position: relative;
+  width: 100%;
+  height: 500px; /* adjust height */
+  background: url('https://agratasinfotech.com/img/IT-Solutions.jpg') no-repeat center center/cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #ffffff;
+  overflow: hidden;
 }
 
-.about-header h3 {
-    display: inline-block;
-    background: black;          /* Black background only behind text */
-    color: #fbbf24;
-    font-size: 26px;
-    font-weight: 700;
-    padding: 12px 25px;         /* Add spacing around text */
-    border-radius: 8px;         /* Smooth rounded corners */
+/* Overlay with blur */
+.about-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.4); /* semi-transparent dark overlay */
+  backdrop-filter: blur(4px); /* blur effect */
+  z-index: 1;
 }
 
-
-
-/* ---------------- TITLE ---------------- */
-.about-title {
-    text-align: center;
-    padding: 60px 10%;
+/* Content above overlay */
+.about-content {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+  padding: 0 20px;
 }
 
-.about-title h1 {
-    font-size: 42px;
-    font-weight: 700;
+/* Small heading (cover text) */
+.about-small-heading {
+  font-size: 20px;
+  font-weight: 600;
+  color: #f59e0b; /* orange color */
+  text-transform: uppercase;
+  margin-bottom: 15px;
+  letter-spacing: 1px;
+  background: rgba(0,0,0,0.3); /* optional semi-transparent background behind text */
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 4px;
 }
 
-.about-title p {
-    margin-top: 15px;
-    font-size: 18px;
-    color: #444;
+/* Main heading */
+.about-main-heading {
+  font-size: 42px;
+  font-weight: 700;
+  margin-bottom: 20px;
 }
+
+/* Paragraph */
+.about-paragraph {
+  font-size: 18px;
+  line-height: 1.6;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .about-banner {
+    height: 450px;
+  }
+
+  .about-main-heading {
+    font-size: 36px;
+  }
+
+  .about-paragraph {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-banner {
+    height: 400px;
+  }
+
+  .about-small-heading {
+    font-size: 16px;
+    padding: 4px 10px;
+  }
+
+  .about-main-heading {
+    font-size: 28px;
+  }
+
+  .about-paragraph {
+    font-size: 15px;
+  }
+}
+
 
 
 /* ---------------- OUR BOXES ---------------- */
@@ -770,12 +836,15 @@ body {
     padding-right: 20px;
 }
 
-/* LOGO TEXT */
-.footer-logo-text {
-    font-size: 32px;
-    font-weight: 700;
-    margin-bottom: 15px;
+/* LOGO TEXT STYLE */
+.footer-logo a {
+  display: block;
+  width: 200px;       /* adjust logo width */
+  height: 75px;       /* adjust logo height */
+  background: url('./altras.png') no-repeat center/contain;
+  text-indent: -9999px; /* hide text if any */
 }
+
 
 .footer-logo-text .word1 { color: #111827; }
 .footer-logo-text .word2 { color: #f59e0b; }
