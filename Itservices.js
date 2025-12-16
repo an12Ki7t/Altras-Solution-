@@ -49,3 +49,10 @@ document.addEventListener("DOMContentLoaded", () => {
     observer.observe(box);
   });
 });
+// Floating button toggle
+  const floatingBtn = document.querySelector(".floating-btn");
+  const mainBtn = floatingBtn.querySelector(".main-btn");
+  mainBtn.addEventListener("click", () => {
+    floatingBtn.classList.toggle("active");
+  });
+

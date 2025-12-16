@@ -78,3 +78,10 @@ modal.addEventListener("click", e => {
   track.addEventListener('mouseleave', () => {
     track.style.animationPlayState = 'running';
   });
+// Floating button toggle
+  const floatingBtn = document.querySelector(".floating-btn");
+  const mainBtn = floatingBtn.querySelector(".main-btn");
+  mainBtn.addEventListener("click", () => {
+    floatingBtn.classList.toggle("active");
+  });
+

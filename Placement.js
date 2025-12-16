@@ -123,4 +123,11 @@ document.addEventListener("DOMContentLoaded", () => {
   slider.addEventListener("mouseenter", () => { speed = 0; });
   slider.addEventListener("mouseleave", () => { speed = 0.5; });
 });
+// Floating button toggle
+  const floatingBtn = document.querySelector(".floating-btn");
+  const mainBtn = floatingBtn.querySelector(".main-btn");
+  mainBtn.addEventListener("click", () => {
+    floatingBtn.classList.toggle("active");
+  });
+
 

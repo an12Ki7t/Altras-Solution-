@@ -17,15 +17,12 @@ body {
   top: 0;
   z-index: 999;
   padding: 25px 0;
-  background: rgba(17, 24, 39, 0.55);
-  backdrop-filter: blur(14px);
+  background: #ffffff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
   transition: 0.3s ease-in-out;
 }
 
-.navbar.scrolled {
-  background: #ffffff;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
-}
+
 
 .nav-container {
   width: 90%;
@@ -47,14 +44,14 @@ body {
 /* ---------------- CENTER MENU ---------------- */
 .nav-links {
   display: flex;
-  gap: 22px;
+  gap: 40px;
   list-style: none;
   align-items: center;
 }
 
 .nav-links a {
   font-size: 16px;
-  color: white;
+  color: black;
   font-weight: 700;
   text-decoration: none;
   padding-bottom: 4px;
@@ -62,9 +59,6 @@ body {
   border-bottom: 2px solid transparent;
 }
 
-.navbar.scrolled .nav-links a {
-  color: #111827;
-}
 
 .nav-links a:hover,
 .nav-links a.active {
@@ -1125,4 +1119,87 @@ body {
     }
 
     .footer-social { justify-content: center; }
+}
+/* Container for floating button */
+.floating-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+/* Main button (click to expand) */
+.main-btn {
+  background: #4CAF50;  /* green */
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  font-size: 24px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease;
+}
+
+.main-btn:hover {
+  transform: scale(1.1);
+}
+
+/* Child buttons container */
+.child-btns {
+  display: none; /* hidden initially */
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+/* Individual child buttons */
+.child-btn {
+  background:orange;
+  color: #fff;
+  padding: 10px 15px;
+  margin-top: 10px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  cursor: pointer;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.child-btn i {
+  margin-right: 8px;
+}
+
+.child-btn:hover {
+  background: orange;
+}
+
+/* Show child buttons when active */
+.floating-btn.active .child-btns {
+  display: flex;
+}
+
+/* Responsive adjustments for mobile */
+@media (max-width: 768px) {
+  .floating-btn {
+    bottom: 15px;
+    right: 15px;
+  }
+
+  .child-btn {
+    font-size: 13px;
+    padding: 8px 12px;
+  }
+
+  .main-btn {
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+  }
 }

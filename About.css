@@ -38,7 +38,7 @@ body {
   text-indent: -9999px; /* hide text if any */
 }
 
-.nav-links { display: flex; gap: 20px; list-style: none; }
+.nav-links { display: flex; gap: 40px; list-style: none; }
 
 .nav-links a {
   text-decoration: none;
@@ -532,9 +532,9 @@ body {
 }
 
 .story-content p {
-    font-size: 18px;
-    color: #333;
+    font-size: 20px;
     line-height: 1.8;
+    color: #4b5563;
     text-align: justify;
 }
 .our-story-box {
@@ -568,100 +568,139 @@ body {
         max-width: 100%;
     }
 }
-/* ================= OUR TEAM ================= */
-.team-box {
-    max-width: 800px;
-    background: #ffffff;
-    padding: 40px 35px;
-    border-radius: 12px;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-    text-align: center;
-    color: #000;
-    margin: auto;
-    transition: all 0.3s ease;
-}
-.team-box h2 {
-    font-size: 32px;
-    margin-bottom: 20px;
-    font-weight: 600;
-}
-.team-box p {
-    font-size: 18px;
-    line-height: 1.8;
-    text-align: justify;
-}
-
-/* ================= MEET OUR EXPERTS ================= */
-.experts-box {
-    max-width: 800px;
-    background: #ffffff;
-    padding: 40px 35px;
-    border-radius: 12px;
-    text-align: center;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.12);
-    transition: all 0.3s ease;
-    margin: auto;
-    margin-top: 100px;
-}
-
-.experts-box:hover {
-    border: 2px solid #f59e0b;
-    box-shadow: 0 12px 32px rgba(245,158,11,0.3);
-}
-
-.expert-icon {
-    width: 80px;
-    height: 80px;
-    margin: 0 auto 20px auto;
-    background: linear-gradient(135deg, #f59e0b, #fbbf24);
-    border-radius: 50%;
+.team-section {
+    padding: 60px 20px;
+    background: #f0f0f0; /* light grey background for contrast */
     display: flex;
     justify-content: center;
-    align-items: center;
+}
+
+.team-box-shadow {
+    background: #ffffff;       /* white box */
+    padding: 40px 30px;
+    border-radius: 12px;
+     max-width: 1150px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+}
+
+/* Hover effect for box */
+.team-box-shadow:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(255, 165, 0, 0.5); /* orange glow */
+    border: 2px solid #FFA500; /* optional orange border */
+}
+
+.team-box-shadow h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+/* Image styling */
+.team-image img {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.team-image img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 20px rgba(255,165,0,0.5); /* orange shadow on hover */
+}
+
+.team-box-shadow p {
+   font-size: 20px;
+    line-height: 1.8;
+    color: #4b5563;
+}
+
+
+/* ================= MEET OUR EXPERTS ================= */
+.experts-section {
+    padding: 60px 20px;
+    background: #f8f9fa; /* Light background for contrast */
+    text-align: center;
+}
+
+.experts-box {
+     max-width: 1150px;
+    margin: 0 auto;
+    background: #ffffff;
+    padding: 40px 20px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.expert-icon img {
-    width: 45px;
-    height: 45px;
+.experts-box:hover {
+    transform: translateY(-5px);
+     box-shadow: 0 10px 25px rgba(255, 165, 0, 0.5); 
 }
 
-.expert-icon:hover {
-    transform: scale(1.1);
-    
+.expert-icon {
+    margin-bottom: 20px;
+}
+
+.expert-icon img {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
 .experts-box h2 {
-    font-size: 30px;
-    margin-bottom: 15px;
+    font-size: 32px;
+    color: #111827;
+    margin-bottom: 20px;
+    font-weight: 600;
 }
 
 .experts-box p {
-    font-size: 18px;
+    font-size: 20px;
     line-height: 1.8;
-    color: #000;
-    text-align: justify;
+    color: #4b5563;
+}
+
+/* Fade animation (if you want) */
+.fade-element {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 1s forwards;
+    animation-delay: 0.3s;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* Responsive */
-@media (max-width: 768px) {
-    .expert-icon {
-        width: 60px;
-        height: 60px;
+@media screen and (max-width: 768px) {
+    .experts-box {
+        padding: 30px 15px;
     }
 
     .expert-icon img {
-        width: 35px;
-        height: 35px;
+        width: 100px;
+        height: 100px;
     }
 
     .experts-box h2 {
-        font-size: 26px;
+        font-size: 28px;
     }
 
     .experts-box p {
-        font-size: 16px;
-        line-height: 1.6;
+        font-size: 15px;
     }
 }
 
@@ -943,5 +982,88 @@ body {
     }
 
     .footer-social { justify-content: center; }
+}
+/* Container for floating button */
+.floating-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+/* Main button (click to expand) */
+.main-btn {
+  background: #4CAF50;  /* green */
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  font-size: 24px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease;
+}
+
+.main-btn:hover {
+  transform: scale(1.1);
+}
+
+/* Child buttons container */
+.child-btns {
+  display: none; /* hidden initially */
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+/* Individual child buttons */
+.child-btn {
+  background:orange;
+  color: #fff;
+  padding: 10px 15px;
+  margin-top: 10px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  cursor: pointer;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.child-btn i {
+  margin-right: 8px;
+}
+
+.child-btn:hover {
+  background: orange;
+}
+
+/* Show child buttons when active */
+.floating-btn.active .child-btns {
+  display: flex;
+}
+
+/* Responsive adjustments for mobile */
+@media (max-width: 768px) {
+  .floating-btn {
+    bottom: 15px;
+    right: 15px;
+  }
+
+  .child-btn {
+    font-size: 13px;
+    padding: 8px 12px;
+  }
+
+  .main-btn {
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+  }
 }
 

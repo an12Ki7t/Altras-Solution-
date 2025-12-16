@@ -121,3 +121,13 @@ document.querySelector(".secondary-btn").addEventListener("click", function(e) {
     e.preventDefault();
     alert("Our team will contact you shortly for your free consultation.");
 });
+document.addEventListener("DOMContentLoaded", function () {
+
+  // Floating button toggle
+  const floatingBtn = document.querySelector(".floating-btn");
+  const mainBtn = floatingBtn.querySelector(".main-btn");
+  mainBtn.addEventListener("click", () => {
+    floatingBtn.classList.toggle("active");
+  });
+
+});

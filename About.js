@@ -80,4 +80,12 @@ const fadeObserver = new IntersectionObserver(
 );
 
 fadeElements.forEach(el => fadeObserver.observe(el));
+// Floating button toggle
+  const floatingBtn = document.querySelector(".floating-btn");
+  const mainBtn = floatingBtn.querySelector(".main-btn");
+  mainBtn.addEventListener("click", () => {
+    floatingBtn.classList.toggle("active");
+  });
+
+
 
